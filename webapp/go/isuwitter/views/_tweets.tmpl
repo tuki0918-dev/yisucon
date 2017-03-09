@@ -1,0 +1,7 @@
+{{ range .Tweets }}
+  <div class="tweet" data-time="{{ .Time }}">
+    <p><a href="/{{ .UserName }}" class="tweet-user-name">{{ .UserName }}</a></p>
+    <p>{{ raw .HTML }}</p>
+    <p class="time">{{ .Time }}</p>
+  </div>
+{{ end }}

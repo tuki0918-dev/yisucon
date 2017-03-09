@@ -1,0 +1,28 @@
+{{ template "base_top" .}}
+
+{{ if .Name }}
+{{ template "_post" .}}
+{{ end }}
+
+<h3>{{ .User }} さんのツイート</h3>
+
+{{ if .Mypage }}
+<h4>あなたのページです</h4>
+{{ else if .IsFriend }}
+<form action="/unfollow" method="post">
+   <input type="hidden" name="user" value="{{ .User }}">
+   <button type="submit" id="user-unfollow-button">アンフォロー</button>
+</form>
+{{ else if .Name }}
+<form action="/follow" method="post">
+   <input type="hidden" name="user" value="{{ .User }}">
+   <button type="submit" id="user-follow-button">フォロー</button>
+</form>
+{{ end }}
+
+   <div class="timeline">
+{{ template "_tweets" .}}
+   </div>
+   <button class="readmore">さらに読み込む</button>
+
+{{ template "base_bottom" .}}

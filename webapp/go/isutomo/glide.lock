@@ -1,0 +1,10 @@
+hash: 786bbaf361d98a50fd02ece1b264eb99e881e2931470a7e57a8652e6a0dbcda0
+updated: 2016-12-26T15:35:56.931185464+09:00
+imports:
+- name: github.com/go-sql-driver/mysql
+  version: 4ac31a97ccff97de60ba3c630bfb4733c1bb6d0e
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: cf79e51a62d8219d52060dfc1b4e810414ba2d15
+testImports: []
