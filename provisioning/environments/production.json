@@ -1,0 +1,15 @@
+{
+  "json_class": "Chef::Environment",
+  "default_attributes": {
+    "env": "production",
+    "start_date": "CHANGE HERE",
+    "end_date": "CHANGE HERE",
+    "portal_host": "CHANGE HERE",
+    "db_host": "CHANGE HERE",
+    "db_port": 3306,
+    "db_user": "CHANGE HERE",
+    "db_pass": "CHANGE HERE",
+    "db_name": "isucon",
+    "secret_key": "GENERATE SECRET KEY"
+  }
+}
