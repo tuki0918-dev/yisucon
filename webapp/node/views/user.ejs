@@ -1,0 +1,24 @@
+<% if (name) { %>
+  <%- include('./_post') %>
+<% } %>
+
+<h3><%= user %> さんのツイート</h3>
+
+<% if (mypage) { %>
+  <h4>あなたのページです</h4>
+<% } else if (isFriend) { %>
+  <form action="/unfollow" method="post">
+    <input type="hidden" name="user" value="<%= user %>">
+    <button type="submit" id="user-unfollow-button">アンフォロー</button>
+  </form>
+<% } else if (name) { %>
+  <form action="/follow" method="post">
+    <input type="hidden" name="user" value="<%= user %>">
+    <button type="submit" id="user-follow-button">フォロー</button>
+  </form>
+<% } %>
+
+<div class="timeline">
+  <%- include('./_tweets', {params: 'tweets'}) %>
+</div>
+<button class="readmore">さらに読み込む</button>

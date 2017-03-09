@@ -1,0 +1,25 @@
+CREATE DATABASE IF NOT EXISTS isuwitter;
+CREATE DATABASE IF NOT EXISTS isutomo;
+
+DROP TABLE IF EXISTS isuwitter.users;
+CREATE TABLE isuwitter.users (
+    id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name VARCHAR(20) UNIQUE,
+    salt VARCHAR(20),
+    password VARCHAR(40)
+) Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS isuwitter.tweets;
+CREATE TABLE isuwitter.tweets (
+    id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    user_id BIGINT UNSIGNED,
+    text TEXT,
+    created_at DATETIME NOT NULL
+) Engine=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS isutomo.friends;
+CREATE TABLE isutomo.friends (
+    id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    me VARCHAR(20) UNIQUE,
+    friends TEXT
+) Engine=InnoDB DEFAULT CHARSET=utf8mb4;
