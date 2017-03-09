@@ -1,0 +1,19 @@
+hash: 485ef5089984f64642d69331bc1b87f54bcc5580f8d7d4b7a84345d2b29b9b71
+updated: 2017-01-21T16:24:45.016584708+09:00
+imports:
+- name: github.com/andybalholm/cascadia
+  version: 349dd0209470eabd9514242c688c403c0926d266
+- name: github.com/go-sql-driver/mysql
+  version: 2e00b5cd70399450106cec6431c2e2ce3cae5034
+- name: github.com/gocraft/dbr
+  version: 10fa49bf1ee63a0f822283ef9805d818f9e84742
+  subpackages:
+  - dialect
+- name: github.com/PuerkitoBio/goquery
+  version: 3cb3b8656883c2cc3deb9c643d93ea6e5157e425
+- name: golang.org/x/net
+  version: f2499483f923065a842d38eb4c7f1927e6fc6e6d
+  subpackages:
+  - html
+  - html/atom
+testImports: []

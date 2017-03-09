@@ -1,0 +1,5 @@
+package: github.com/yahoojapan/yisucon/benchmarker
+import:
+- package: github.com/PuerkitoBio/goquery
+- package: github.com/go-sql-driver/mysql
+- package: github.com/gocraft/dbr
