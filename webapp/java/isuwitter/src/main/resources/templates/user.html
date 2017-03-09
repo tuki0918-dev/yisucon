@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<div layout:fragment="content">
+    <div layout:replace="_post :: partial" th:remove="tag"></div>
+
+    <h4 th:if="${mypage}">あなたのページです</h4>
+    <div th:unless="${mypage}" th:remove="tag">
+        <h3 th:text="${user} + ' さんのツイート'" />
+        <div th:if="${name != null}" th:remove="tag">
+        <form th:if="${isFriend}"  action="/unfollow" method="post">
+            <input type="hidden" name="user" th:value="${user}"/>
+            <button type="submit" id="user-unfollow-button">アンフォロー</button>
+        </form>
+        <form  th:unless="${isFriend}" action="/follow" method="post">
+            <input type="hidden" name="user" th:value="${user}"/>
+            <button type="submit" id="user-follow-button">フォロー</button>
+        </form>
+        </div>
+    </div>
+
+    <div layout:replace="_tweet :: partial(${tweets})" th:remove="tag"></div>
+    <button class="readmore">さらに読み込む</button>
+
+</div>
+</body>
+</html>

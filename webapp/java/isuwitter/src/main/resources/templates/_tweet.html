@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+
+<div layout:fragment="partial(${tweets})" th:remove="tag">
+    <div class="timeline">
+       <div th:each="tweet : ${tweets}" th:remove="tag">
+           <div class="tweet" th:attr="data-time=${tweet.time}" >
+               <p><a th:href="'/'+${tweet.userName}" class="tweet-user-name" th:text="${tweet.userName}"></a></p>
+               <p th:utext="${tweet.html}"></p>
+               <p class="time" th:text="${tweet.time}"></p>
+           </div>
+       </div>
+    </div>
+</div>
+
+        <div th:fragment="append" th:remove="tag">
+            <div th:each="tweet : ${tweets}" th:remove="tag">
+                <div class="tweet" th:attr="data-time=${tweet.time}" >
+                    <p><a th:href="'/'+${tweet.userName}" class="tweet-user-name" th:text="${tweet.userName}"></a></p>
+                    <p th:utext="${tweet.html}"></p>
+                    <p class="time" th:text="${tweet.time}"></p>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

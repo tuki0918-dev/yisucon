@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<div layout:fragment="content">
+
+    <p th:if="${flush}" class="flush" th:text="${flush}"></p>
+    <form th:unless="${flush}" class="login" action="/login" method="post">
+        <input type="text" name="name" />
+        <input type="password" name="password" />
+        <button type="submit">ログイン</button>
+    </form>
+</div>
+</body>
+</html>
+

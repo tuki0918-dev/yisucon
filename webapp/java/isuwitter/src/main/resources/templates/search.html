@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<body>
+<div layout:fragment="content">
+
+    <div layout:replace="_post :: partial" th:remove="tag"></div>
+
+    <h3 th:text="${query} + 'に関するツイート'"/>
+
+    <div layout:replace="_tweet :: partial(${tweets})" th:remove="tag"></div>
+    <button class="readmore">さらに読み込む</button>
+</div>
+</body>
+</html>
